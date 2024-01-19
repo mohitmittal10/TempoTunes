@@ -7,7 +7,7 @@ async function getsongs() {
     let songs = [];
     for (let index = 0; index < as.length; index++) {
         const element = as[index];
-        if (element.href.endsWith(".mp3")) {
+        if (element.href.endsWith(".mp3")) { 
             songs.push(element.href.split(/songs/)[1])      
           }
     }
@@ -20,11 +20,21 @@ async function getsongs() {
 async function main() {
     let songs = await getsongs()
     console.log(songs)
-
+    
+    //show all the songs in playlist
     let songUL = document.querySelector(".songList").getElementsByTagName("ul")[0]
     for (const song of songs) {
-        songUL.innerHTML = songUL.innerHTML + `<li> ${song.replaceAll("%20", " ").replaceAll("/", "").replaceAll("%5D", "").replaceAll("%5B", "").replaceAll(".mp3", "")} </li>`;
-
+        songUL.innerHTML = songUL.innerHTML + `<li> <img class="invert" src="music.svg" alt="">
+        <div class="info">
+            <div>${song.replaceAll("%20", " ").replaceAll("/", "").replaceAll("%5D", "").replaceAll("%5B", "").replaceAll(".mp3", "")}</div>
+            <div>Song Artist</div>
+        </div>
+        <div class="playnow">
+            <span>Play Now</span>
+            <img class="invert" src="play.svg" alt="">
+        </div>
+    </li>`;
+        
         
     }
 
@@ -44,3 +54,6 @@ async function main() {
 
 
 main()
+
+
+
