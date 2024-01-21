@@ -127,14 +127,14 @@ cursor: pointer;
     position: absolute;
     bottom: 0;
     background-color: gray;
-    width: 100%;
+    width: 97%;
     padding: 12px;
 }
 
 .songbutton{
     display: flex;
     justify-content: center;
-    gap: 15px;px;
+    gap: 15px;
 }
 .songList{
  
@@ -142,7 +142,7 @@ cursor: pointer;
         overflow: auto;
         margin-bottom: 44px;
 
-    }
+}
 
 .songList ul li{
     list-style-type: decimal;
@@ -159,4 +159,27 @@ cursor: pointer;
 }
 .songList ul{
     padding: 0px 12px;
+}
+
+.seekbar{
+    position: relative;
+    bottom: -36px;
+    height: 5px;
+    border-radius: 10px;
+    background: white;
+}
+
+.circle{
+    width: 13px;
+    height: 13px;
+    border-radius: 13px;
+    background-color: black;
+    position: relative;
+    bottom: 5px;
+    left: 0%;
+    transition: left 0.5s ;
+}
+
+.songbutton{
+cursor: pointer;
 }
