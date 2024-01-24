@@ -162,6 +162,7 @@ cursor: pointer;
 }
 
 .seekbar{
+    cursor: pointer;
     position: relative;
     bottom: -36px;
     height: 5px;
@@ -170,6 +171,7 @@ cursor: pointer;
 }
 
 .circle{
+    cursor: pointer;;
     width: 13px;
     height: 13px;
     border-radius: 13px;
@@ -179,7 +181,25 @@ cursor: pointer;
     left: 0%;
     transition: left 0.5s ;
 }
+.close{
+    padding-top: 5px;
+    padding-left: 5px;
+}
 
 .songbutton{
 cursor: pointer;
+}
+
+@media (max-width: 1200px){
+    .left{
+        background-color: black;
+        position: absolute;
+        left: -100%;
+        transition: all .5s;
+        z-index: 1;
+    }
+
+    .right{
+        width: 100vw;
+    }
 }
