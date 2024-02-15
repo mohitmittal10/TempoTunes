@@ -1,4 +1,6 @@
 let currentSong = new Audio();
+let songs
+
 
 function secondsToMinutesSeconds(seconds) {
     if (isNaN(seconds) || seconds < 0) {
@@ -25,7 +27,8 @@ async function getsongs() {
     for (let index = 0; index < as.length; index++) {
         const element = as[index];
         if (element.href.endsWith(".mp3")) {
-            songs.push(element.href.split(/songs/)[1])
+            songs.push(element.href.split(/songs/)[1].replaceAll("/", ""))
+           // console.log(element.href.split(/songs/)[1])
         }
     }
 
@@ -58,7 +61,7 @@ const displayLastPlayedSongInfo = ()=>{
 async function main() {
 
     //get the list of all songs
-    let songs = await getsongs()
+     songs = await getsongs()
     //console.log(songs)
 
     //show all the songs in playlist
@@ -122,7 +125,38 @@ document.querySelector(".close").addEventListener("click", e=>{
     document.querySelector(".left").style.left = -100 + "%"
 })
 
-//add event listner to previous and next
+//add event listner to previous 
+previous.addEventListener("click", ()=>{
+  //  console.log(currentSong.src)
+   // console.log(currentSong.src.split("/")[4])
+  //  console.log(songs)
+  //  console.log(songs.indexOf(currentSong.src.split("/")[4]))
+
+      // Get the index of the current song in the songs array
+      const currentIndex = songs.indexOf(currentSong.src.split("/")[4]);
+      // Calculate the index of the previous song
+      const previousIndex = (currentIndex - 1 + songs.length) % songs.length;
+      //play prev song
+      if(currentIndex!=0){
+      playmusic(songs[previousIndex])
+      }
+})
+
+//add event listner to next 
+next.addEventListener("click", ()=>{
+    // Get the index of the current song in the songs array
+    const currentIndex = songs.indexOf(currentSong.src.split("/")[4]);
+    //get the index of prev song
+    const nextIndex = (currentIndex+1)%songs.length
+    //play next song
+    if(currentIndex!=songs.length-1){
+        playmusic(songs[nextIndex])
+    }
+})
+
+
+
+
 
 
 
