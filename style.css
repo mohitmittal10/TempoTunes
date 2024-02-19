@@ -1,37 +1,47 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&family=Work+Sans:wght@200;300&display=swap');
 
-*{
-    margin: 0% ;
+* {
+    margin: 0%;
     padding: 0%;
     font-family: 'Roboto', sans-serif;
     font-family: 'Work Sans', sans-serif;
 }
 
-body{
-  height: 100vh;
-  
-} 
-.container{
+:root {
+    --a: 0;
+}
+
+body {
+    height: 100vh;
+
+}
+
+.container {
     height: 100vh;
 }
-.left{
+
+.left {
     width: 25vw;
 }
-.right{
+
+.right {
     width: 75vw;
     position: relative;
 }
-.home{
+
+.home {
     padding: 10px;
 }
-.home ul li{
+
+.home ul li {
     display: flex;
     gap: 15px;
     list-style: none;
     width: 20px;
     font-weight: bold;
 }
-.heading{
+
+.heading {
     display: flex;
     gap: 15px;
     list-style: none;
@@ -41,15 +51,17 @@ body{
     align-items: center;
 }
 
-.heading img{
+.heading img {
     width: 30px;
 }
-.library{
+
+.library {
     min-height: 80vh;
-    
+
     position: relative;
 }
-.footer{
+
+.footer {
     display: flex;
     font-size: 10px;
     gap: 13px;
@@ -58,22 +70,34 @@ body{
     padding: 10px;
 }
 
-.footer a{
+.footer a {
     color: grey;
-    
+
 }
-.header{
+
+.header {
     display: flex;
     justify-content: space-between;
 }
-.spotifyPlaylist .card{
+
+.spotifyPlaylist .card {
     width: 200px;
     padding: 10px;
     margin: 3px;
     background-color: #363131;
     position: relative;
+    transition: all .7s;
+
 }
-.cardContainer{
+
+.card:hover {
+    background-color: black;
+    cursor: pointer;
+    --a: 1;
+
+}
+
+.cardContainer {
     display: flex;
     margin: 25px;
     display: flex;
@@ -83,38 +107,43 @@ body{
     justify-content: flex-start;
     max-height: 70vh;
     overflow-y: scroll;
-  
+
 }
-   
-.card > *{
+
+.card>* {
     padding-top: 10px;
     width: 200px;
 }
-.card img{
+
+.card img {
     width: 100%;
     object-fit: contain;
 }
+
 .play {
     width: fit-content;
     position: absolute;
     top: 168px;
     left: 172px;
-   
+    opacity: var(--a);
+
 }
 
-.loginbtn{
-background-color: white;
-border-radius: 21px;
-color: black;
-font-weight: bold;
-padding: 10px;
-width: 79px;
-cursor: pointer;
+.loginbtn {
+    background-color: white;
+    border-radius: 21px;
+    color: black;
+    font-weight: bold;
+    padding: 10px;
+    width: 79px;
+    cursor: pointer;
 }
-.loginbtn:hover{
+
+.loginbtn:hover {
     font-weight: bold;
 }
-.signupbtn{
+
+.signupbtn {
     background-color: black;
     border-radius: 21px;
     color: rgb(210, 195, 195);
@@ -123,7 +152,8 @@ cursor: pointer;
     width: 79px;
     cursor: pointer;
 }
-.playbar{
+
+.playbar {
     position: absolute;
     bottom: 0;
     background-color: gray;
@@ -131,20 +161,21 @@ cursor: pointer;
     padding: 12px;
 }
 
-.songbutton{
+.songbutton {
     display: flex;
     justify-content: center;
     gap: 15px;
 }
-.songList{
- 
-        height: 544px;
-        overflow: auto;
-        margin-bottom: 44px;
+
+.songList {
+
+    height: 544px;
+    overflow: auto;
+    margin-bottom: 44px;
 
 }
 
-.songList ul li{
+.songList ul li {
     list-style-type: decimal;
     display: flex;
     justify-content: space-between;
@@ -155,13 +186,14 @@ cursor: pointer;
     margin: 12px 0;
     padding: 13px;
     border-radius: 5px;
-  
+
 }
-.songList ul{
+
+.songList ul {
     padding: 0px 12px;
 }
 
-.seekbar{
+.seekbar {
     cursor: pointer;
     position: relative;
     bottom: -36px;
@@ -170,8 +202,9 @@ cursor: pointer;
     background: white;
 }
 
-.circle{
-    cursor: pointer;;
+.circle {
+    cursor: pointer;
+    ;
     width: 13px;
     height: 13px;
     border-radius: 13px;
@@ -179,19 +212,20 @@ cursor: pointer;
     position: relative;
     bottom: 5px;
     left: 0%;
-    transition: left 0.5s ;
+    transition: left 0.5s;
 }
-.close{
+
+.close {
     padding-top: 5px;
     padding-left: 5px;
 }
 
-.songbutton{
-cursor: pointer;
+.songbutton {
+    cursor: pointer;
 }
 
-@media (max-width: 1200px){
-    .left{
+@media (max-width: 1200px) {
+    .left {
         background-color: black;
         position: absolute;
         left: -100%;
@@ -199,7 +233,7 @@ cursor: pointer;
         z-index: 1;
     }
 
-    .right{
+    .right {
         width: 100vw;
     }
 }
