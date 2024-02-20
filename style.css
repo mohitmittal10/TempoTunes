@@ -67,7 +67,7 @@ body {
     font-size: 10px;
     gap: 13px;
     position: absolute;
-    bottom: 0;
+    bottom: -5px;
     padding: 10px;
 }
 
@@ -82,7 +82,7 @@ body {
 }
 
 .spotifyPlaylist .card {
-    width: 200px;
+    width: 150px;
     padding: 10px;
     margin: 3px;
     background-color: #363131;
@@ -155,11 +155,25 @@ body {
 }
 
 .playbar {
-    position: absolute;
-    bottom: 0;
-    background-color: gray;
-    width: 97%;
+    position: relative;
+    bottom: 65px;
+    background-color: #000000;
+    width: 60%;
     padding: 12px;
+    margin-left: 162px;
+    height: 50px;
+    border-radius: 10px;
+   
+}
+.volume {
+    position: absolute;
+    top: 25px;
+    margin-left: 439px;
+    display: flex;
+    gap: 5px;
+    width: 24px;
+    margin-right: -28px;
+    align-items: center;
 }
 
 .songbutton {
@@ -175,7 +189,11 @@ body {
     margin-bottom: 44px;
 
 }
-
+.songinfo{
+    position: relative;
+    bottom: 10px;
+    font-size: large;
+}
 .songList ul li {
     list-style-type: decimal;
     display: flex;
@@ -191,18 +209,29 @@ body {
 }
 
 .songList ul {
-    padding: 0px 12px;
+    padding: 12px 12px 12px 12px;
+    top: -10px;
+    bottom: 36px;
+    position: relative;
 }
 
 .seekbar {
     cursor: pointer;
     position: relative;
-    bottom: -36px;
+    bottom: -50px;
     height: 5px;
     border-radius: 10px;
-    background: white;
+    background: #b29797;
 }
-
+.songbutton.invert {
+    position: relative;
+    bottom: 26px;
+}
+.songtime {
+    position: relative;
+    font-size: 12px;
+    bottom: -5px;
+}
 .circle {
     cursor: pointer;
     ;
