@@ -52,7 +52,7 @@ async function getsongs(folder) {
      // atttach an event listner to each song
      Array.from(document.querySelector(".songList").getElementsByTagName("li")).forEach(e => {
          e.addEventListener("click", element => {
-             console.log(e.querySelector(".info").firstElementChild.innerHTML)
+             ////console.log(e.querySelector(".info").firstElementChild.innerHTML)
              playmusic(e.querySelector(".info").firstElementChild.innerHTML.trim())
          })
      })
@@ -97,14 +97,14 @@ async function displayAlbums(){
             const e = array[index];
             
         
-        //console.log(e.href)
+        ////console.log(e.href)
         if(e.href.includes("/songs/")){
-            console.log(e.href.split("/").slice(-2)[1])
+            //console.log(e.href.split("/").slice(-2)[1])
             let folder = e.href.split("/").slice(-2)[1]; // Get the folder name
             //get the metadaata of the folder
             let a = await fetch(`http://127.0.0.1:5500/songs/${folder}/info.json`)
             let response = await a.json();
-            console.log(response)
+            //console.log(response)
 
             cardContainer.innerHTML = cardContainer.innerHTML + `<div data-folder="${folder}" class="card rounded">
             <div class="play">
@@ -123,7 +123,7 @@ async function displayAlbums(){
 
         // load the playlist whenever card is clicked 
 Array.from(document.getElementsByClassName("card")).forEach(e=>{
-    console.log(e)
+    //console.log(e)
     e.addEventListener("click", async item=>{
         songs = await getsongs(`songs/${item.currentTarget.dataset.folder}`)
     })
@@ -143,7 +143,7 @@ async function main() {
 displayAlbums()
     //get the list of all songs
      songs = await getsongs("songs/${folder}")
-    //console.log(songs)
+    ////console.log(songs)
 
    
 }
@@ -162,7 +162,7 @@ play.addEventListener("click", () => {
 
 //listen for time update event
 currentSong.addEventListener("timeupdate", () => {
-    console.log(currentSong.currentTime, currentSong.duration)
+    //console.log(currentSong.currentTime, currentSong.duration)
     document.querySelector(".songtime").innerHTML = `${secondsToMinutesSeconds(currentSong.currentTime)}/${secondsToMinutesSeconds(currentSong.duration)}`
     document.querySelector(".circle").style.left  = currentSong.currentTime / currentSong.duration * 100  + "%"
 })
@@ -180,17 +180,34 @@ document.querySelector(".hamburger").addEventListener("click", e=>{
     
 })
 
+
+// Function to hide or show the close button based on viewport width
+function toggleCloseButtonVisibility() {
+    const closeButton = document.querySelector(".close");
+    if (window.innerWidth > 768) {
+        closeButton.style.display = "none"; // Hide the close button
+    } else {
+        closeButton.style.display = "block"; // Show the close button
+    }
+}
+
 //event listner to close hamburger
 document.querySelector(".close").addEventListener("click", e=>{
-    document.querySelector(".left").style.left = -100 + "%"
+    document.querySelector(".left").style.left = -150 + "%"
 })
+
+// Listen for changes in viewport width
+window.addEventListener("resize", toggleCloseButtonVisibility);
+
+// Initial call to set close button visibility when the page loads
+toggleCloseButtonVisibility();
 
 //add event listner to previous 
 previous.addEventListener("click", ()=>{
-    console.log(currentSong.src)
-    console.log(currentSong.src.split("/")[4])
-  //  console.log(songs)
-   // console.log(songs.indexOf(currentSong.src.split("/")[4]))
+    //console.log(currentSong.src)
+    //console.log(currentSong.src.split("/")[4])
+  //  //console.log(songs)
+   // //console.log(songs.indexOf(currentSong.src.split("/")[4]))
     currentSong.pause()
       // Get the index of the current song in the songs array
       const currentIndex = songs.indexOf(currentSong.src.split("/").slice(-1)[0]);
@@ -200,11 +217,11 @@ previous.addEventListener("click", ()=>{
    ////   if(currentIndex!=0){
    ////   playmusic(songs[previousIndex])
    ////   }
-   console.log(currentIndex)
+   ////console.log(currentIndex)
    if((currentIndex-1) >= 0){
     playmusic(songs[currentIndex-1])
    }
-   console.log(currentSong.src.split("/").slice(-1)[0])
+   ////console.log(currentSong.src.split("/").slice(-1)[0])
 })
 
 //add event listner to next 
@@ -226,7 +243,7 @@ next.addEventListener("click", ()=>{
 
 //add event listner to volume
   document.querySelector(".range").getElementsByTagName("input")[0].addEventListener("change",(e)=>{
-    console.log(e,e.target,e.target.value)
+    //console.log(e,e.target,e.target.value)
     currentSong.volume = parseInt(e.target.value)/100
   })
 

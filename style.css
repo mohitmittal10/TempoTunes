@@ -5,11 +5,43 @@
     padding: 0%;
     font-family: 'Roboto', sans-serif;
     font-family: 'Work Sans', sans-serif;
+    border-style: border-box;
 }
 
 :root {
     --a: 0;
 }
+
+/* Track */
+::-webkit-scrollbar {
+    width: 10px; /* width of the scrollbar */
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #4e4848; /* color of the scrollbar handle */
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555; /* color of the scrollbar handle on hover */
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #8b6464; /* color of the scrollbar track */
+}
+
+/* Track on hover */
+::-webkit-scrollbar-track:hover {
+    background: #ccc; /* color of the scrollbar track on hover */
+}
+
+/* Corner */
+::-webkit-scrollbar-corner {
+    background: #fff; /* color of the scrollbar corner (where two scrollbars meet) */
+}
+
 
 body {
    
@@ -125,11 +157,14 @@ body {
     width: fit-content;
     position: absolute;
     top: 168px;
-    left: 172px;
+    left: 125px;
     opacity: var(--a);
 
 }
-
+svg {
+    width: 35px;
+    height: 40px;
+}
 .loginbtn {
     background-color: white;
     border-radius: 21px;
@@ -155,25 +190,31 @@ body {
 }
 
 .playbar {
-    position: relative;
-    bottom: 65px;
+    position: absolute;
+    bottom: 15px;
     background-color: #000000;
     width: 60%;
     padding: 12px;
-    margin-left: 162px;
+    /* margin-left: 162px; */
+    right: 20%;
+    left: 16%;
     height: 50px;
     border-radius: 10px;
    
 }
 .volume {
     position: absolute;
-    top: 25px;
-    margin-left: 439px;
+    right: 1px;
+    /* top: 25px; */
+    /* margin-left: 439px; */
     display: flex;
     gap: 5px;
-    width: 24px;
-    margin-right: -28px;
+    /* width: 29px; */
+    /* margin-right: -28px; */
     align-items: center;
+    /* flex-direction: row; */
+    justify-content: space-evenly;
+    
 }
 
 .songbutton {
@@ -248,22 +289,33 @@ body {
 .close {
     padding-top: 5px;
     padding-left: 5px;
+    position: absolute;
+    right: 20px;
 }
 
 .songbutton {
     cursor: pointer;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 768px) {
     .left {
         background-color: black;
         position: absolute;
         left: -100%;
         transition: all .5s;
         z-index: 1;
+        width: fit-content;
     }
 
     .right {
         width: 100vw;
+    }
+}
+
+@media (max-width: 500px) {
+    .spotifyPlaylist .card{
+        min-width: fit-content ;
+        
+       
     }
 }
