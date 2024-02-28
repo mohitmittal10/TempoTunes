@@ -14,37 +14,45 @@
 
 /* Track */
 ::-webkit-scrollbar {
-    width: 10px; /* width of the scrollbar */
+    width: 10px;
+    /* width of the scrollbar */
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-    background: #4e4848; /* color of the scrollbar handle */
+    background: #a19595;
+    /* color of the scrollbar handle */
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-    background: #555; /* color of the scrollbar handle on hover */
+    background: #474444;
+    /* color of the scrollbar handle on hover */
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
-    background: #8b6464; /* color of the scrollbar track */
+    background: #8b6464;
+    /* color of the scrollbar track */
 }
 
 /* Track on hover */
 ::-webkit-scrollbar-track:hover {
-    background: #ccc; /* color of the scrollbar track on hover */
+    background: background: #8b6464;
+    /* color of the scrollbar track */
+    ;
+    /* color of the scrollbar track on hover */
 }
 
 /* Corner */
 ::-webkit-scrollbar-corner {
-    background: #fff; /* color of the scrollbar corner (where two scrollbars meet) */
+    background: #fff;
+    /* color of the scrollbar corner (where two scrollbars meet) */
 }
 
 
 body {
-   
+
     height: 100vh;
 
 }
@@ -89,7 +97,7 @@ body {
 }
 
 .library {
-   height: 67vh;
+    height: 67vh;
 
     position: relative;
 }
@@ -161,10 +169,12 @@ body {
     opacity: var(--a);
 
 }
+
 svg {
     width: 35px;
     height: 40px;
 }
+
 .loginbtn {
     background-color: white;
     border-radius: 21px;
@@ -200,8 +210,9 @@ svg {
     left: 16%;
     height: 50px;
     border-radius: 10px;
-   
+
 }
+
 .volume {
     position: absolute;
     right: 1px;
@@ -214,7 +225,7 @@ svg {
     align-items: center;
     /* flex-direction: row; */
     justify-content: space-evenly;
-    
+
 }
 
 .songbutton {
@@ -230,11 +241,13 @@ svg {
     margin-bottom: 44px;
 
 }
-.songinfo{
+
+.songinfo {
     position: relative;
     bottom: 10px;
     font-size: large;
 }
+
 .songList ul li {
     list-style-type: decimal;
     display: flex;
@@ -264,15 +277,18 @@ svg {
     border-radius: 10px;
     background: #b29797;
 }
+
 .songbutton.invert {
     position: relative;
     bottom: 26px;
 }
+
 .songtime {
     position: relative;
     font-size: 12px;
     bottom: -5px;
 }
+
 .circle {
     cursor: pointer;
     ;
@@ -313,9 +329,9 @@ svg {
 }
 
 @media (max-width: 500px) {
-    .spotifyPlaylist .card{
-        min-width: fit-content ;
-        
-       
+    .spotifyPlaylist .card {
+        min-width: fit-content;
+
+
     }
 }
