@@ -1,0 +1,30 @@
+{
+    "genres" : [
+        {
+           "title" : "chill",
+           "path" : "chill/",
+           "songs":[
+                {
+                    "title":"better-day-186374 (1).mp3",
+                    "artist":"Artist AAA"
+                },
+                {
+                    "title":"chill-abstract-intention-12099.mp3",
+                    "artist":"Artist BCD"
+                },
+                {
+                    "title":"jazzy-abstract-beat-11254 (1).mp3",
+                    "artist":"Artist KLM"
+                },
+                {
+                    "title":"sexy-fashion-beats-simulate-11176.mp3",
+                    "artist":"ARTIST BVG"
+                },
+                {
+                    "title":"titanium-170190.mp3",
+                    "artist":"ARTIST DFC"
+                }
+            ]
+        }
+    ]
+}
