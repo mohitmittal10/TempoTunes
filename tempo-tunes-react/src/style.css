@@ -38,7 +38,7 @@
 
 /* Track on hover */
 ::-webkit-scrollbar-track:hover {
-    background: background: #8b6464;
+    background:#8b6464;
     /* color of the scrollbar track */
     ;
     /* color of the scrollbar track on hover */
@@ -122,9 +122,12 @@ body {
 }
 
 .spotifyPlaylist .card {
-    width: 150px;
     padding: 10px;
+    display: flex;
+    flex-direction: column;
+    height: 300px;
     margin: 3px;
+    
     background-color: #363131;
     position: relative;
     transition: all .7s;
@@ -200,16 +203,19 @@ svg {
 }
 
 .playbar {
+    padding: 30px;
     position: absolute;
-    bottom: 15px;
+    bottom: 5vh;
+    
     background-color: #000000;
-    width: 60%;
-    padding: 12px;
+    
     /* margin-left: 162px; */
-    right: 20%;
-    left: 16%;
-    height: 50px;
+    width:900px;
+
     border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
 
 }
 
@@ -271,8 +277,11 @@ svg {
 
 .seekbar {
     cursor: pointer;
-    position: relative;
-    bottom: -50px;
+    position: absolute;
+    left:5%;
+
+    bottom: 0;
+    width: 90%;
     height: 5px;
     border-radius: 10px;
     background: #b29797;
